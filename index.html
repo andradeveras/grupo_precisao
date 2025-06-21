@@ -32,55 +32,149 @@
 
   <!-- Serviços -->
   <section id="servicos" class="servicos container">
-    <h2>Nossos Serviços</h2>
-    <div class="grid">
-      <div class="card">Gestão Condominial</div>
-      <div class="card">Auditoria Financeira</div>
-      <div class="card">Suporte Contábil</div>
-      <div class="card">Plataforma Digital</div>
+    <h2 class="section-title-servicos">Nossos <span class="gradient-text">Serviços</span></h2>
+  <div class="servicos-grid">
+    <div class="servico-card">
+      <img src="./assets/img/icons/building.png" alt="Ícone Gestão" class="servico-icon">
+      <h3>Gestão Condominial</h3>
+      <p>Administração completa com foco em transparência, economia e excelência operacional.</p>
     </div>
-  </section>
+    <div class="servico-card">
+      <img src="./assets/img/icons/graph.png" alt="Ícone Auditoria" class="servico-icon">
+      <h3>Auditoria Financeira</h3>
+      <p>Auditorias mensais e relatórios detalhados para garantir a segurança das finanças.</p>
+    </div>
+    <div class="servico-card">
+      <img src="./assets/img/icons/accounting.png" alt="Ícone Contábil" class="servico-icon">
+      <h3>Suporte Contábil</h3>
+      <p>Acompanhamento contábil especializado com atendimento ágil e orientação técnica.</p>
+    </div>
+    <div class="servico-card">
+      <img src="./assets/img/icons/transformation.png" alt="Ícone Plataforma" class="servico-icon">
+      <h3>Plataforma Digital</h3>
+      <p>Soluções digitais para acesso a boletos, documentos e comunicação em tempo real.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- Benefícios -->
   <section id="beneficios" class="beneficios">
-    <div class="container">
-      <h2>Benefícios</h2>
-      <div class="grid">
-        <div class="card">Transparência Financeira</div>
-        <div class="card">Tecnologia de Ponta</div>
-        <div class="card">Atendimento Personalizado</div>
-        <div class="card">Redução de Custos</div>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+    <h2 class="section-title-beneficios">Conheça Nossos <span class="gradient-text">Benefícios</span></h2>
+    <div class="carousel" mask>
+      <article>
+        <img src="./assets/img/transparencia.jpg" alt="Transparência Financeira">
+        <h2>Transparência Financeira</h2>
+        <div>
+          <p>Acesso claro e detalhado às finanças, com relatórios regulares e prestação de contas.</p>
+        </div>
+      </article>
 
-  <!-- Contato -->
-  <section id="contato" class="contato container">
-    <h2>Entre em Contato</h2>
-    <form id="form-contato">
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <input type="email" id="email" placeholder="Seu email" required>
-      <input type="tel" id="telefone" placeholder="Telefone" required>
-      <textarea id="mensagem" placeholder="Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <p id="form-status"></p>
-  </section>
+      <article>
+        <img src="./assets/img/tecnologia.jpg" alt="Tecnologia de Ponta">
+        <h2>Tecnologia de Ponta</h2>
+        <div>
+          <p>Utilizamos plataformas digitais modernas para agilizar a gestão e melhorar a experiência dos moradores.</p>
+        </div>
+      </article>
+
+      <article>
+        <img src="./assets/img/atendimento.jpg" alt="Atendimento Personalizado">
+        <h2>Atendimento Personalizado</h2>
+        <div>
+          <p>Equipe dedicada e preparada para entender as necessidades específicas do seu condomínio.</p>
+        </div>
+      </article>
+
+      <article>
+        <img src="./assets/img/reducao.jpg" alt="Redução de Custos">
+        <h2>Redução de Custos</h2>
+        <div>
+          <p>Otimização de recursos, contratos e processos que geram economia real para os condôminos.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contato -->
+ <section id="contato" class="contato-wrapper">
+  <div class="contato-container">
+    <!-- Lado esquerdo: imagem ou animação -->
+    <div class="contato-imagem">
+      <img src="./assets/img/contato.svg" alt="Ilustração de contato" />
+      <!-- ou substitua por uma animação Lottie -->
+      <!-- <lottie-player src="animação.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
+    </div>
+
+    <!-- Lado direito: formulário -->
+    <div class="formbold-form-wrapper">
+      <h2>Entre em Contato</h2>
+      <form id="form-contato" method="POST" action="https://formbold.com/s/FORM_ID">
+        <div class="formbold-input-flex">
+          <div>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" class="formbold-form-input" required>
+            <label for="nome" class="formbold-form-label">Nome</label>
+          </div>
+          <div>
+            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" class="formbold-form-input" required>
+            <label for="telefone" class="formbold-form-label">Telefone</label>
+          </div>
+        </div>
+
+        <div>
+          <input type="email" name="email" id="email" placeholder="Seu email" class="formbold-form-input" required>
+          <label for="email" class="formbold-form-label">Email</label>
+        </div>
+
+        <div class="formbold-textarea">
+          <textarea rows="6" name="mensagem" id="mensagem" placeholder="Escreva sua mensagem..." class="formbold-form-input" required></textarea>
+          <label for="mensagem" class="formbold-form-label">Mensagem</label>
+        </div>
+
+        <button type="submit" class="formbold-btn">Enviar</button>
+        <p id="form-status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
 
   <!-- Simulador -->
   <section id="simulador" class="simulador container">
-    <h2>Simulador de Taxa de Administração</h2>
-    <form id="form-simulador">
-      <input type="number" id="valor" placeholder="Valor mensal do condomínio (R$)" required>
-      <input type="number" id="percentual" placeholder="Percentual da taxa (%)" required>
-      <input type="number" id="meses" placeholder="Número de meses" required>
-    </form>
+  <h2 class="section-title">Simulador de <span class="gradient-text">Taxa de Administração</span></h2>
 
-    <div class="resultado">
-      <p><strong>Valor mensal da taxa:</strong> <span id="valorMensal"></span></p>
-      <p><strong>Total no período:</strong> <span id="valorTotal"></span></p>
+  <form id="form-simulador" class="simulador-form">
+    <div class="form-group">
+      <label for="valor">Valor mensal do condomínio (R$)</label>
+      <input type="number" id="valor" placeholder="Ex: 3500" required>
     </div>
+    <div class="form-group">
+      <label for="percentual">Percentual da taxa (%)</label>
+      <input type="number" id="percentual" placeholder="Ex: 5" required>
+    </div>
+    <div class="form-group">
+      <label for="meses">Número de meses</label>
+      <input type="number" id="meses" placeholder="Ex: 12" required>
+    </div>
+  </form>
 
+  <div class="resultado">
+    <div class="card-result">
+      <h4>Valor mensal da taxa</h4>
+      <p id="valorMensal">R$ 0,00</p>
+    </div>
+    <div class="card-result">
+      <h4>Total no período</h4>
+      <p id="valorTotal">R$ 0,00</p>
+    </div>
+  </div>
+
+  <div class="tabela-wrapper">
+    <h3>Comparativo de Percentuais</h3>
     <table>
       <thead>
         <tr>
@@ -91,9 +185,13 @@
       </thead>
       <tbody id="tabelaComparativa"></tbody>
     </table>
+  </div>
 
+  <div class="grafico-wrapper">
     <canvas id="grafico"></canvas>
-  </section>
+  </div>
+</section>
+
 
   <script src="js/main.js"></script>
 </body>
