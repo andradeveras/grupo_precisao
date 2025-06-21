@@ -90,11 +90,11 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 70vh;
   color: white;
   padding: 6em 1em;
-  text-align: center;
+  text-align: left; /* <-- Corrigido aqui */
   background-image: url('../assets/img/fotoBannerHEro.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -113,7 +113,10 @@ nav a:hover {
 .hero h2, .hero p, .hero .btn {
   position: relative;
   z-index: 2;
-}
+  max-width: 700px;       
+  margin-left: 0.6em;
+  text-align: left;
+  }
 
 .hero h2 {
   font-weight: bold;
@@ -121,31 +124,46 @@ nav a:hover {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   margin-bottom: 0.5em;
   font-size: 2.8em;
+  line-height: 1.2;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left; /* <-- Corrigido aqui */
+  margin-left: 0.6em; /* <-- Adicionado para alinhar com o parágrafo */
+  margin-bottom: 0.5em;
 }
 
 .hero p {
   font-size: 1.2em;
-  margin-bottom: 1.5em;
   color: var(--cor-header);
-  padding: 0 1em 50px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 400;
+  text-align: left; /* <-- Corrigido aqui */
+  margin-left: 0.6em; /* <-- Adicionado para alinhar com o título */
+  margin-bottom: 3em;
+  line-height: 1.5;
+  margin-left: 1.5em;
+  max-width: 600px; /* Limita a largura do parágrafo */
 }
 
 .hero .btn {
   padding: 1em 2em;
-  border-radius: 6px;
   font-size: 1.1em;
-  border: 2px solid var(--cor-header);
-  background: var(--cor-primaria);
+  background: var(--cor-gradiente);
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-left: 1.5em;
 }
 
 .hero .btn:hover {
   background: var(--cor-destaque);
   color: white;
 }
+
 
 .btn, .cta {
   background: white;
