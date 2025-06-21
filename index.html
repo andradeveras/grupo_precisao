@@ -1,11 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Taxas - Grupo Precisão</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Grupo Precisão</h1>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato">Contato</a>
+        <a href="#simulador" class="cta">Simule Agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2>Simule sua Taxa de Administração</h2>
+      <p>Descubra quanto você pode economizar com a nossa gestão inteligente.</p>
+      <a href="#simulador" class="btn">Começar Simulação</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="servicos container">
+    <h2>Nossos Serviços</h2>
+    <div class="grid">
+      <div class="card">Gestão Condominial</div>
+      <div class="card">Auditoria Financeira</div>
+      <div class="card">Suporte Contábil</div>
+      <div class="card">Plataforma Digital</div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section id="beneficios" class="beneficios">
+    <div class="container">
+      <h2>Benefícios</h2>
+      <div class="grid">
+        <div class="card">Transparência Financeira</div>
+        <div class="card">Tecnologia de Ponta</div>
+        <div class="card">Atendimento Personalizado</div>
+        <div class="card">Redução de Custos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contato container">
+    <h2>Entre em Contato</h2>
+    <form id="form-contato">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu email" required>
+      <input type="tel" id="telefone" placeholder="Telefone" required>
+      <textarea id="mensagem" placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="form-status"></p>
+  </section>
+
+  <!-- Simulador -->
+  <section id="simulador" class="simulador container">
+    <h2>Simulador de Taxa de Administração</h2>
+    <form id="form-simulador">
+      <input type="number" id="valor" placeholder="Valor mensal do condomínio (R$)" required>
+      <input type="number" id="percentual" placeholder="Percentual da taxa (%)" required>
+      <input type="number" id="meses" placeholder="Número de meses" required>
+    </form>
+
+    <div class="resultado">
+      <p><strong>Valor mensal da taxa:</strong> <span id="valorMensal"></span></p>
+      <p><strong>Total no período:</strong> <span id="valorTotal"></span></p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Percentual</th>
+          <th>Mensal</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaComparativa"></tbody>
+    </table>
+
+    <canvas id="grafico"></canvas>
+  </section>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
