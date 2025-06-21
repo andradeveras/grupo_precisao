@@ -1,0 +1,99 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+header {
+  background: #0A4470;
+  color: white;
+  padding: 1em 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav a {
+  color: white;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+.hero {
+  background: #0B66C3;
+  color: white;
+  padding: 4em 0;
+  text-align: center;
+}
+
+.btn, .cta {
+  background: #ffffff;
+  color: #0B66C3;
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.card {
+  background: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input, textarea {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: #0A4470;
+  color: white;
+  border: none;
+  padding: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.simulador .resultado {
+  margin-top: 2em;
+}
+
+.simulador table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2em;
+  background: white;
+}
+
+.simulador th, .simulador td {
+  padding: 1em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+canvas {
+  margin-top: 2em;
+}
