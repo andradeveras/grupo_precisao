@@ -1,16 +1,36 @@
 /* style.css */
+:root {
+  --cor-primaria: #ED1C24;
+  --cor-secundaria: #7C1D92;
+  --cor-destaque: #F26522;
+  --cor-gradiente: linear-gradient(90deg, #F26522, #ED1C24, #B425B6);
+  --cor-header: #ffffff;
+  --cor-texto: #333333;
+  --cor-fundo: #FFFFFF;
+  --cor-claro: #F2F2F2;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #f5f7fa;
+  color: var(--cor-texto);
+  background-color: var(--cor-claro);
 }
 
 header {
-  background: #0A4470;
-  color: white;
+  background: var(--cor-header);
   padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
 }
 
 .container {
@@ -19,22 +39,117 @@ header {
   margin: 0 auto;
 }
 
-nav a {
-  color: white;
-  margin-left: 1em;
-  text-decoration: none;
+nav {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
 }
 
-.hero {
-  background: #0B66C3;
+nav a {
+  display: flex;
+  padding: 0.5em 1em;
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-right: 2em;
+}
+nav .cta {
+  background: var(--cor-primaria);
   color: white;
-  padding: 4em 0;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav .cta:hover {
+  background: var(--cor-destaque);
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: inherit;
+  color: var(--cor-primaria); 
+  
+}
+ nav .menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: var(--cor-texto);
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  color: white;
+  padding: 6em 1em;
   text-align: center;
+  background-image: url('../assets/img/fotoBannerHEro.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(237,28,36,0.5), rgba(255,255,255,0));
+  z-index: 1;
+}
+
+.hero h2, .hero p, .hero .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-weight: bold;
+  color: var(--cor-header);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 0.5em;
+  font-size: 2.8em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: var(--cor-header);
+  padding: 0 1em 50px;
+}
+
+.hero .btn {
+  padding: 1em 2em;
+  border-radius: 6px;
+  font-size: 1.1em;
+  border: 2px solid var(--cor-header);
+  background: var(--cor-primaria);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--cor-destaque);
+  color: white;
 }
 
 .btn, .cta {
-  background: #ffffff;
-  color: #0B66C3;
+  background: white;
+  color: var(--cor-primaria);
   padding: 0.8em 1.5em;
   text-decoration: none;
   font-weight: bold;
@@ -43,38 +158,63 @@ nav a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
   margin-top: 2em;
 }
 
 .card {
   background: white;
-  padding: 1.5em;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 input, textarea {
   padding: 1em;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 1em;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 5px rgba(124, 29, 146, 0.3);
 }
 
 button {
-  background: #0A4470;
+  background: var(--cor-secundaria);
   color: white;
   border: none;
   padding: 1em;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--cor-primaria);
 }
 
 .simulador .resultado {
@@ -86,14 +226,37 @@ button {
   border-collapse: collapse;
   margin-top: 2em;
   background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .simulador th, .simulador td {
   padding: 1em;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   text-align: center;
+  font-size: 1em;
 }
 
 canvas {
   margin-top: 2em;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
