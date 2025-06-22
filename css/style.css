@@ -595,6 +595,8 @@ body {
 }
 
 .section-title {
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 3em;
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
