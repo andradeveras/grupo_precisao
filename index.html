@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador de Taxas - Grupo Precisão</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -18,7 +19,7 @@
       <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 
       <!-- Menu de navegação -->
-      <nav>
+      <nav id="menu-mobile">
         <a href="#servicos">Serviços</a>
         <a href="#beneficios">Benefícios</a>
         <a href="#contato">Contato</a>
@@ -162,6 +163,7 @@
 
     <button type="submit" class="btn-solicitar">Solicitar</button>
     <p class="form-privacidade">🔒 Seus dados estão seguros pela LGPD</p>
+    <div id="form-message" style="margin-top: 1rem;"></div>
   </form>
 </div>
 
@@ -215,6 +217,51 @@
     <canvas id="grafico"></canvas>
   </div>
 </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./assets/img/logo-precisao.svg" alt="Logo Grupo Precisão">
+      </div>
+
+      <!-- Localizações -->
+    <div class="footer-info">
+      <div class="footer-col">
+        <h4>Copacabana</h4>
+        <p>Av. Nossa Sra. de Copacabana, 978<br>
+        Lojas: 111, 201, 204, 214, 215, 216 e 217</p>
+        <p><strong>Telefone:</strong> (21) 3883-2450</p>
+      </div>
+      <div class="footer-col">
+        <h4>Leblon</h4>
+        <p>Av. Ataulfo de Paiva, 517<br>Sobreloja</p>
+        <p><strong>Telefone:</strong> (21) 2529-1700</p>
+      </div>
+    </div>
+
+    <!-- Telefones adicionais -->
+    <div class="footer-telefones">
+      <p><strong>Condomínio Copacabana/Matriz:</strong> (21) 3883-2450</p>
+      <p><strong>Condomínio Filial/Leblon:</strong> (21) 96769-2763</p>
+    </div>
+
+      <nav class="footer-social">
+        <a href="https://www.instagram.com/precisaoadm/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/PrecisaoAdministradora" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/precisao-administradora/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </nav>
+
+
+
+      <p class="footer-copy">© 2025 Grupo Precisão. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
 
   <script src="js/main.js"></script>

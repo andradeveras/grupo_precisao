@@ -1,4 +1,6 @@
-/* style.css */
+/* ==========================
+   VARIÁVEIS GLOBAIS
+   ========================== */
 :root {
   --cor-primaria: #ED1C24;
   --cor-secundaria: #7C1D92;
@@ -10,14 +12,17 @@
   --cor-claro: #F2F2F2;
 }
 
+/* Texto com gradiente aplicado */
 .gradient-text {
-  background: linear-gradient(90deg, #F26522, #ED1C24, #B425B6);
+  background: var(--cor-gradiente);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-
+/* ==========================
+   ESTILOS GERAIS
+   ========================== */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -26,13 +31,15 @@ body {
   background-color: var(--cor-claro);
 }
 
+/* ==========================
+   HEADER E NAVEGAÇÃO
+   ========================== */
 header {
   background: var(--cor-header);
   padding: 1em 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  
 }
 
 .header-flex {
@@ -45,6 +52,7 @@ header {
   margin: 0 auto;
 }
 
+/* Navegação principal */
 nav {
   display: flex;
   gap: 1em;
@@ -59,12 +67,16 @@ nav a {
   font-weight: 500;
   transition: 0.3s;
 }
+
+/* Logo */
 .logo {
   height: 80px;
   width: auto;
   display: block;
   margin-right: 2em;
 }
+
+/* Botão de chamada para ação (CTA) */
 nav .cta {
   background: var(--cor-gradiente);
   color: white;
@@ -74,23 +86,20 @@ nav .cta {
 }
 
 nav .cta:hover {
-  background: var(--cor-gradiente), linear-gradient(90deg, #F26522, #ED1C24, #B425B6);
-  color: white;
+  opacity: 0.9;
 }
 
+/* Hover links padrão */
 nav a:hover {
-  text-decoration: inherit;
-  color: var(--cor-gradiente, linear-gradient(90deg, #F26522, #ED1C24, #B425B6)); 
-  
-}
- nav .menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5em;
-  color: var(--cor-texto);
+  text-decoration: none;
+  color: var(--cor-destaque); /* Melhor do que tentar usar gradiente */
 }
 
-/* Esconde o botão no desktop */
+/* ==========================
+   BOTÃO HAMBÚRGUER / MENU MOBILE
+   ========================== */
+
+/* Botão de menu oculto por padrão (aparece apenas no mobile) */
 .menu-toggle {
   display: none;
   background: none;
@@ -100,23 +109,23 @@ nav a:hover {
   color: var(--cor-texto);
 }
 
-/* Estilo padrão do menu no desktop */
+/* Menu padrão no desktop */
 #menu-mobile {
   display: flex;
   gap: 1em;
   align-items: center;
 }
 
-/* Menu mobile (oculto por padrão) */
+/* ==========================
+   RESPONSIVO - MOBILE
+   ========================== */
 @media (max-width: 768px) {
+  /* Exibe botão hambúrguer */
   .menu-toggle {
     display: block;
-    position: absolute;
-    right: 2rem;
-    top: 1.8rem;
-    z-index: 1100;
   }
 
+  /* Oculta menu padrão no mobile */
   #menu-mobile {
     display: none;
     flex-direction: column;
@@ -131,18 +140,16 @@ nav a:hover {
     border-radius: 0 0 16px 16px;
   }
 
+  /* Exibe o menu mobile quando a classe .open é aplicada via JS */
   #menu-mobile.open {
     display: flex;
-  }
-
-  #menu-mobile a {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    text-align: left;
   }
 }
 
 
+/* ==========================
+   HERO SECTION
+   ========================== */
 .hero {
   display: flex;
   flex-direction: column;
@@ -151,65 +158,62 @@ nav a:hover {
   height: 70vh;
   color: white;
   padding: 6em 1em;
-  text-align: left; /* <-- Corrigido aqui */
+  text-align: left;
   background-image: url('../assets/img/fotoBannerHEro.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   position: relative;
 }
+
 .container-hero {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Gradiente sobre a imagem */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(237,28,36,0.5), rgba(255,255,255,0));
+  background: linear-gradient(to top, rgba(237, 28, 36, 0.5), rgba(255, 255, 255, 0));
   z-index: 1;
 }
 
-.hero h2, .hero p, .hero .btn {
+/* Elementos com conteúdo acima do gradiente */
+.hero h2,
+.hero p,
+.hero .btn {
   position: relative;
   z-index: 2;
-  max-width: 700px;       
-  margin-left: 0.6em;
+  max-width: 700px;
   text-align: left;
-  
-  }
+  margin-left: 1.5em;
+}
 
+/* Título do Hero */
 .hero h2 {
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  margin-bottom: 0.5em;
-  font-size: 2.8em;
-  line-height: 1.2;
-  font-family: 'Segoe UI', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: left; 
-  margin-left: 0.6em; /* <-- Adicionado para alinhar com o parágrafo */
+  font-size: 2.8em;
+  line-height: 1.2;
   margin-bottom: 0.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Parágrafo do Hero */
 .hero p {
   font-size: 1.2em;
   color: var(--cor-header);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 400;
-  text-align: left; /* <-- Corrigido aqui */
-  margin-left: 0.6em; /* <-- Adicionado para alinhar com o título */
-  margin-bottom: 3em;
   line-height: 1.5;
-  margin-left: 1.5em;
-  max-width: 600px; /* Limita a largura do parágrafo */
+  margin-bottom: 3em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
 }
 
+/* Botão do Hero */
 .hero .btn {
   padding: 1em 2em;
   font-size: 1.1em;
@@ -218,16 +222,17 @@ nav a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
-  margin-left: 1.5em;
 }
 
 .hero .btn:hover {
   background: var(--cor-destaque);
-  color: white;
 }
 
-
-.btn, .cta {
+/* ==========================
+   BOTÕES GERAIS
+   ========================== */
+.btn,
+.cta {
   background: white;
   color: var(--cor-primaria);
   padding: 0.8em 1.5em;
@@ -236,26 +241,9 @@ nav a:hover {
   border-radius: 5px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5em;
-  margin-top: 2em;
-}
-
-.card {
-  background: white;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-}
+/* ==========================
+   SERVIÇOS - GERAL
+   ========================== */
 .servicos {
   padding: 5em 1em;
   text-align: center;
@@ -266,9 +254,9 @@ nav a:hover {
   margin-bottom: 2em;
   font-family: 'Segoe UI', sans-serif;
   font-weight: 700;
-  text-align: center;
 }
 
+/* Grade de serviços */
 .servicos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -278,55 +266,15 @@ nav a:hover {
   margin: 0 auto;
 }
 
+/* ==========================
+   CARTÕES DE SERVIÇO
+   ========================== */
 .servico-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2em;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
-}
-
-.servico-card:hover {
-  transform: translateY(-5px);
-}
-
-.servico-icon {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  display: block;
-  margin-inline: auto;
-  margin-bottom: 1.2em;
-  transition: transform 0.3s ease;
-}
-
-.servico-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.servico-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.servico-card:hover .servico-icon {
-  transform: scale(1.1);
-}
-
-.servico-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: left; /* agora tudo alinha à esquerda */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -335,14 +283,26 @@ nav a:hover {
   gap: 0.8em;
 }
 
-.servico-icon {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  margin-bottom: 1.2em;
-  align-self: flex-start; /* alinha ícone com o texto */
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Ícone do serviço */
+.servico-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1.2em;
+  align-self: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.servico-card:hover .servico-icon {
+  transform: scale(1.1);
+}
+
+/* Título do serviço */
 .servico-card h3 {
   font-size: 1.3em;
   font-weight: 600;
@@ -351,6 +311,7 @@ nav a:hover {
   line-height: 1.3;
 }
 
+/* Texto do serviço */
 .servico-card p {
   color: #444;
   font-size: 1em;
@@ -361,7 +322,9 @@ nav a:hover {
 }
 
 
-
+/* ==========================
+   CARROSSEL DE BENEFÍCIOS
+   ========================== */
 .carousel {
   --items: 4;
   --carousel-duration: 30s;
@@ -381,9 +344,7 @@ nav a:hover {
 .beneficios {
   background-color: var(--cor-texto);
   padding: 4em 1em;
-  
 }
-
 
 .section-title-beneficios {
   font-size: 2.4em;
@@ -395,6 +356,7 @@ nav a:hover {
   text-align: center;
 }
 
+/* Cartões do carrossel */
 .carousel > article {
   position: absolute;
   top: 0;
@@ -404,23 +366,20 @@ nav a:hover {
   display: grid;
   grid-template-rows: 200px auto 1fr auto;
   gap: 0.25rem;
+  padding-bottom: 1rem;
   border-radius: 10px;
   background: var(--cor-texto);
   color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  animation-name: marquee;
-  animation-duration: var(--carousel-duration);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: marquee var(--carousel-duration) linear infinite;
   will-change: transform;
-  padding-bottom: 1rem;
-  
 }
 
-.carousel article:nth-child(1) { --i: 0; animation-delay: calc(var(--carousel-duration) / var(--items) * -0); }
-.carousel article:nth-child(2) { --i: 1; animation-delay: calc(var(--carousel-duration) / var(--items) * -1); }
-.carousel article:nth-child(3) { --i: 2; animation-delay: calc(var(--carousel-duration) / var(--items) * -2); }
-.carousel article:nth-child(4) { --i: 3; animation-delay: calc(var(--carousel-duration) / var(--items) * -3); }
+/* Delays para cada item */
+.carousel article:nth-child(1) { animation-delay: calc(var(--carousel-duration) / var(--items) * -0); }
+.carousel article:nth-child(2) { animation-delay: calc(var(--carousel-duration) / var(--items) * -1); }
+.carousel article:nth-child(3) { animation-delay: calc(var(--carousel-duration) / var(--items) * -2); }
+.carousel article:nth-child(4) { animation-delay: calc(var(--carousel-duration) / var(--items) * -3); }
 
 .carousel img {
   width: 100%;
@@ -430,11 +389,11 @@ nav a:hover {
 }
 
 .carousel h2 {
-  font-size: 1.5rem; /* Tamanho maior para destaque */
-  font-weight: 600; /* Peso mais elegante que bold (700) */
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 0 0 0.5rem;
   padding: 1rem 1.5rem 0;
-  color: var(--cor-claro, #fff);
+  color: var(--cor-claro);
   line-height: 1.3;
   letter-spacing: 0.5px;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -448,31 +407,16 @@ nav a:hover {
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
-
+/* Animação de movimento horizontal */
 @keyframes marquee {
   100% {
     transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-:root {
-  --cor-secundaria: #6A64F1;
-  --cor-primaria: #4038a0;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
-/* ==== Sessão Contato ==== */
+/* ==========================
+   CONTATO
+   ========================== */
 .contato-wrapper {
   padding: 4rem 1rem;
   background-color: #f9f9f9;
@@ -488,6 +432,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Imagem lateral (parte visual da seção) */
 .contato-imagem {
   flex: 1;
   min-width: 280px;
@@ -496,7 +441,7 @@ body {
   position: relative;
 }
 
-/* Imagem do fundo (logo) */
+/* Logo de fundo com animação */
 .logo-fundo {
   position: absolute;
   top: 0;
@@ -507,7 +452,7 @@ body {
   animation: flutuar 2s ease-in-out infinite;
 }
 
-/* Imagem da frente (formulário) */
+/* Imagem da frente (formulário ou destaque) */
 .imagem-frente {
   position: relative;
   z-index: 2;
@@ -516,7 +461,7 @@ body {
   object-fit: contain;
 }
 
-/* Animação sutil de flutuação */
+/* Animação de flutuação sutil */
 @keyframes flutuar {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
@@ -526,6 +471,20 @@ body {
   }
 }
 
+/* ==========================
+   GERAIS E RESET
+   ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
 
 /* ==== Formulário ==== */
 .formbold-form-wrapper {
@@ -539,6 +498,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Título do formulário */
 .formbold-form-wrapper h2 {
   font-size: 1.9rem;
   color: #07074D;
@@ -547,12 +507,14 @@ body {
   text-align: center;
 }
 
+/* Grupo de campos do formulário - container flex vertical */
 .form-group {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
+/* Rótulo dos campos */
 .form-group label {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
@@ -560,6 +522,7 @@ body {
   color: #333;
 }
 
+/* Inputs e selects do formulário */
 .form-group input,
 .form-group select {
   padding: 0.9rem 1rem;
@@ -571,12 +534,14 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Foco em inputs e selects */
 .form-group input:focus,
 .form-group select:focus {
   border-color: #b425b6;
   background-color: #fff;
 }
 
+/* Estilo customizado para selects (seta) */
 .form-group select {
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -585,6 +550,7 @@ body {
   background-size: 1rem;
 }
 
+/* Botão principal de solicitação */
 .btn-solicitar {
   width: 100%;
   padding: 1rem;
@@ -598,11 +564,13 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Efeito hover no botão */
 .btn-solicitar:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
+/* Texto de privacidade do formulário */
 .form-privacidade {
   font-size: 0.85rem;
   color: #666;
@@ -613,46 +581,57 @@ body {
 
 /* ==== Responsivo ==== */
 @media (max-width: 768px) {
+  /* Container de contato fica em coluna com espaçamento */
   .contato-container {
     flex-direction: column;
     gap: 2rem;
   }
 
+  /* Padding do formulário reduzido em telas menores */
   .formbold-form-wrapper {
     padding: 2rem 1.5rem;
   }
 
+  /* Flex para inputs em coluna */
   .formbold-input-flex {
     flex-direction: column;
   }
 
+  /* Cada item do flex com 100% de largura */
   .formbold-input-flex > div {
     width: 100%;
   }
 
+  /* Limite máximo da imagem em contato */
   .contato-imagem img {
     max-height: 300px;
   }
 }
 
 
-
-/* Estilos gerais do simulador */
+/* ==== Estilos gerais do simulador ==== */
 .simulador {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto; 
+  padding-bottom: 10em;
 }
+
+/* Flex vertical para grupos de formulário */
 .form-group {
   display: flex;
   flex-direction: column;
 }
 
+/* Rótulos do simulador */
 .form-group label {
   font-weight: 500;
   margin-bottom: 0.5rem;
+  color: var(--cor-texto, #333);
+  font-size: 1rem;
 }
 
+/* Inputs do simulador */
 .form-group input {
   padding: 1rem;
   border-radius: 8px;
@@ -661,11 +640,13 @@ body {
   transition: border-color 0.3s;
 }
 
+/* Foco nos inputs do simulador */
 .form-group input:focus {
   border-color: var(--cor-secundaria, #B425B6);
   outline: none;
 }
 
+/* Título das seções */
 .section-title {
   font-family: 'Segoe UI', sans-serif;
   margin-top: 3em;
@@ -674,6 +655,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Formulário do simulador em grid responsivo */
 .simulador-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -681,22 +663,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.btn-simular {
-  grid-column: span 3;
-  padding: 1rem;
-  background: var(--cor-secundaria, #B425B6);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn-simular:hover {
-  background: var(--cor-primaria, #F26522);
-}
-
+/* Container dos resultados */
 .resultado {
   display: flex;
   flex-wrap: wrap;
@@ -705,6 +672,7 @@ body {
   margin-top: 2rem;
 }
 
+/* Cartões de resultado */
 .card-result {
   flex: 1;
   min-width: 250px;
@@ -715,25 +683,27 @@ body {
   text-align: center;
 }
 
+/* Título nos cards */
 .card-result h4 {
   margin-bottom: 0.5rem;
   color: #333;
 }
 
+/* Texto em destaque nos cards */
 .card-result p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--cor-secundaria, #B425B6);
+  color: var(--cor-destaque);
 }
 
-/* Container para a tabela com espaçamento superior consistente */
+/* Container para tabela com scroll horizontal */
 .tabela-wrapper {
   margin-top: 3rem;
   overflow-x: auto; /* Para evitar quebra em telas pequenas */
   -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
 }
 
-/* Estilo principal da tabela dentro do simulador */
+/* Estilo da tabela principal do simulador */
 .simulador table {
   width: 100%;
   border-collapse: separate; /* Separar para usar border-radius */
@@ -748,12 +718,12 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-/* Hover suave na tabela para feedback visual */
+/* Hover suave na tabela */
 .simulador table:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Cabeçalhos e células centralizados e com padding confortável */
+/* Cabeçalhos e células centralizados e com padding */
 .simulador th,
 .simulador td {
   padding: 1rem 1.25rem;
@@ -763,7 +733,7 @@ body {
   transition: background-color 0.2s ease;
 }
 
-/* Cabeçalhos com fundo diferenciado e fonte semibold */
+/* Estilo dos cabeçalhos */
 .simulador th {
   background-color: #f5f7fa;
   font-weight: 600;
@@ -774,23 +744,24 @@ body {
   white-space: nowrap;
 }
 
-/* Última linha não tem borda inferior para melhor acabamento */
+/* Última linha sem borda inferior */
 .simulador tr:last-child td {
   border-bottom: none;
 }
 
-/* Linhas com zebra para facilitar leitura */
+/* Linhas pares com fundo diferente (zebra) */
 .simulador tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
-/* Animação leve para hover nas linhas */
+/* Hover leve nas linhas do corpo da tabela */
 .simulador tbody tr:hover {
   background-color: #e3f2fd;
   cursor: default;
 }
 
-/* Wrapper do gráfico com espaçamento e visual clean */
+
+/* ==== Wrapper do gráfico ==== */
 .grafico-wrapper {
   margin-top: 3rem;
   background: #fff;
@@ -803,19 +774,118 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-/* Hover para feedback sutil */
+/* Efeito hover no wrapper do gráfico */
 .grafico-wrapper:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Canvas responsivo garantindo boa proporção */
+/* Canvas responsivo para gráficos */
 canvas {
   width: 100% !important;
   height: auto !important;
   display: block;
   max-height: 450px;
+  padding-bottom: 5em;
 }
 
+/* ==== Estilos do rodapé ==== */
+.footer {
+  background: #f9f9f9;
+  padding: 3rem 1rem 2rem;
+  border-top: 1px solid #eee;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo img {
+  height: 50px;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.footer-logo img:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.footer-info {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  color: var(--cor-destaque, #ED1C24);
+  margin-bottom: 0.5rem;
+}
+
+.footer-col p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.3rem 0;
+}
+
+.footer-telefones {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social i {
+  font-size: 1.5rem;
+  color: #444;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.footer-social i:hover {
+  color: var(--cor-primaria, #F26522);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+}
+
+/* ==== Responsivo para rodapé ==== */
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================
+   BOTÕES FLUTUANTES
+   ========================== */
+/* Botões flutuantes no canto inferior direito */
+/* Estilo geral dos botões flutuantes */
 .botoes-flutuantes {
   position: fixed;
   bottom: 20px;
@@ -869,27 +939,17 @@ canvas {
 }
 
 
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .simulador th,
-  .simulador td {
-    padding: 0.75rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .grafico-wrapper {
-    padding: 1.5rem;
-  }
+.error-message {
+  color: #d9534f; 
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  font-weight: 600;
 }
 
-/* Para dispositivos muito pequenos, tornar tabela scrollável */
-@media (max-width: 480px) {
-  .simulador table {
-    font-size: 0.85rem;
-  }
-}
-
+/* ==========================
+   RESPONSIVIDADE GERAL
+   ========================== */
+/* Ajustes gerais para telas menores */
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
