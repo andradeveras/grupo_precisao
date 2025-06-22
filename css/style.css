@@ -624,34 +624,52 @@ body {
   margin: 0 auto; 
   padding-bottom: 10em;
 }
-
 /* Flex vertical para grupos de formulário */
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 
 /* Rótulos do simulador */
 .form-group label {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: var(--cor-texto, #333);
-  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--cor-texto, #2d3a4b);
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
 }
 
 /* Inputs do simulador */
 .form-group input {
-  padding: 1rem;
+  padding: 0.85rem 1rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  border: 1.5px solid #cfd8dc;
+  font-size: 1.08rem;
+  background: #f7fafc;
+  color: #2d3a4b;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.04);
 }
 
 /* Foco nos inputs do simulador */
 .form-group input:focus {
   border-color: var(--cor-secundaria, #B425B6);
+  box-shadow: 0 0 0 2px #b425b633;
   outline: none;
+}
+
+/* Remove setas dos inputs type="number" no Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove setas dos inputs type="number" no Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* Título das seções */
@@ -709,6 +727,19 @@ body {
   margin-top: 3rem;
   overflow-x: auto; /* Para evitar quebra em telas pequenas */
   -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
+}
+
+.tabela-wrapper h3 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  color: #2d3a4b; /* tom sóbrio e elegante */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #e0e7ef 0%, #f7fafc 100%);
+  padding: 0.6em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
 }
 
 /* Estilo da tabela principal do simulador */
