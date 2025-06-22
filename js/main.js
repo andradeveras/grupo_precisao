@@ -46,7 +46,7 @@ function calcular() {
 
   // Insere o percentual do usuário no meio do comparativo
   comparativo.splice(1, 0, {
-    percentual: percentual + "% (usuário)",
+    percentual: percentual + "% (Cliente)",
     mensal: formatCurrency(mensal),
     total: formatCurrency(total),
     valorTotal: total
@@ -190,6 +190,22 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Erro ao enviar formulário. Tente novamente.');
     });
   });
+});
+
+// Mostrar/esconder botão ao rolar a página
+const btnTopo = document.getElementById('btn-topo');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btnTopo.classList.add('show');
+  } else {
+    btnTopo.classList.remove('show');
+  }
+});
+
+// Rolagem suave ao clicar
+btnTopo.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 
