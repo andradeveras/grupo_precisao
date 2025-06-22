@@ -159,7 +159,7 @@ nav a:hover {
   color: white;
   padding: 6em 1em;
   text-align: left;
-  background-image: url('../assets/img/fotoBannerHEro.jpg');
+  background-image: url('../assets/img/hero/paisagem-analogica-da-cidade-com-edificios.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -177,9 +177,17 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(237, 28, 36, 0.5), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    to top,
+    rgba(237, 28, 36, 0.15) 300%,
+    rgba(237, 28, 36, 0.05) 750%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 1;
+  pointer-events: none;
 }
+
+
 
 /* Elementos com conteúdo acima do gradiente */
 .hero h2,
@@ -189,7 +197,6 @@ nav a:hover {
   z-index: 2;
   max-width: 700px;
   text-align: left;
-  margin-left: 1.5em;
 }
 
 /* Título do Hero */
@@ -211,6 +218,7 @@ nav a:hover {
   margin-bottom: 3em;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   max-width: 600px;
+  
 }
 
 /* Botão do Hero */
@@ -294,7 +302,7 @@ nav a:hover {
   height: 100px;
   object-fit: contain;
   margin-bottom: 1.2em;
-  align-self: flex-start;
+  align-self: center;
   transition: transform 0.3s ease;
 }
 
