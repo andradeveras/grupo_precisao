@@ -64,7 +64,7 @@
     <h2 class="section-title-beneficios">Conheça Nossos <span class="gradient-text">Benefícios</span></h2>
     <div class="carousel" mask>
       <article>
-        <img src="./assets/img/transparencia.jpg" alt="Transparência Financeira">
+        <img src="./assets/img/beneficios/image1.png" alt="Transparência Financeira">
         <h2>Transparência Financeira</h2>
         <div>
           <p>Acesso claro e detalhado às finanças, com relatórios regulares e prestação de contas.</p>
@@ -72,7 +72,7 @@
       </article>
 
       <article>
-        <img src="./assets/img/tecnologia.jpg" alt="Tecnologia de Ponta">
+        <img src="./assets/img/beneficios/image2.png" alt="Tecnologia de Ponta">
         <h2>Tecnologia de Ponta</h2>
         <div>
           <p>Utilizamos plataformas digitais modernas para agilizar a gestão e melhorar a experiência dos moradores.</p>
@@ -80,7 +80,7 @@
       </article>
 
       <article>
-        <img src="./assets/img/atendimento.jpg" alt="Atendimento Personalizado">
+        <img src="./assets/img/beneficios/image3.png" alt="Atendimento Personalizado">
         <h2>Atendimento Personalizado</h2>
         <div>
           <p>Equipe dedicada e preparada para entender as necessidades específicas do seu condomínio.</p>
@@ -88,10 +88,17 @@
       </article>
 
       <article>
-        <img src="./assets/img/reducao.jpg" alt="Redução de Custos">
+        <img src="./assets/img/beneficios/image4.png" alt="Redução de Custos">
         <h2>Redução de Custos</h2>
         <div>
           <p>Otimização de recursos, contratos e processos que geram economia real para os condôminos.</p>
+        </div>
+      </article>
+      <article>
+        <img src="./assets/img/beneficios/image5.png" alt="Redução de Custos">
+        <h2>Redução de Custos</h2>
+        <div>
+          <p>Suporte ao cliente do início à conclusão da transação imobiliária, acompanhando e fornecendo todos os esclarecimentos necessários.</p>
         </div>
       </article>
     </div>
@@ -102,42 +109,57 @@
  <section id="contato" class="contato-wrapper">
   <div class="contato-container">
     <!-- Lado esquerdo: imagem ou animação -->
-    <div class="contato-imagem">
-      <img src="./assets/img/contato.svg" alt="Ilustração de contato" />
-      <!-- ou substitua por uma animação Lottie -->
-      <!-- <lottie-player src="animação.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
+    <div class="contato-imagem">      
+      <img src="./assets/img/logo-precisao-1.svg" alt="Logo Grupo Precisão" class="logo-fundo" />
+      <img src="./assets/img/formulario/formulario.png" alt="Ilustração de contato" class="imagem-frente" />
     </div>
 
     <!-- Lado direito: formulário -->
     <div class="formbold-form-wrapper">
-      <h2>Entre em Contato</h2>
-      <form id="form-contato" method="POST" action="https://formbold.com/s/FORM_ID">
-        <div class="formbold-input-flex">
-          <div>
-            <input type="text" name="nome" id="nome" placeholder="Seu nome" class="formbold-form-input" required>
-            <label for="nome" class="formbold-form-label">Nome</label>
-          </div>
-          <div>
-            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" class="formbold-form-input" required>
-            <label for="telefone" class="formbold-form-label">Telefone</label>
-          </div>
-        </div>
-
-        <div>
-          <input type="email" name="email" id="email" placeholder="Seu email" class="formbold-form-input" required>
-          <label for="email" class="formbold-form-label">Email</label>
-        </div>
-
-        <div class="formbold-textarea">
-          <textarea rows="6" name="mensagem" id="mensagem" placeholder="Escreva sua mensagem..." class="formbold-form-input" required></textarea>
-          <label for="mensagem" class="formbold-form-label">Mensagem</label>
-        </div>
-
-        <button type="submit" class="formbold-btn">Enviar</button>
-        <p id="form-status"></p>
-      </form>
+  <h2>SOLICITE UMA PROPOSTA</h2>
+  <form id="form-contato" method="POST" action="https://formbold.com/s/FORM_ID">
+    
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
     </div>
-  </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="DDD + Telefone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipo_servico">O que você deseja?</label>
+      <select id="tipo_servico" name="tipo_servico" required>
+        <option disabled selected value="">Selecione uma opção</option>
+        <option value="administracao">Administração de Condomínio</option>
+        <option value="compra-venda">Compra e Venda de Imóveis</option>
+        <option value="locacao">Locação de Imóveis</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="condominio">Nome do Condomínio</label>
+      <input type="text" id="condominio" name="condominio" placeholder="Digite o nome do condomínio">
+    </div>
+
+    <div class="form-group">
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço">
+    </div>
+
+    <button type="submit" class="btn-solicitar">Solicitar</button>
+    <p class="form-privacidade">🔒 Seus dados estão seguros pela LGPD</p>
+  </form>
+</div>
+
+
 </section>
 
 
@@ -194,5 +216,13 @@
 
 
   <script src="js/main.js"></script>
+
+  <div class="botoes-flutuantes">
+  <a href="#simulador" class="botao-simulacao">Faça a sua simulação</a>
+  <a href="https://wa.me/5599999999999" class="whatsapp-float" target="_blank" aria-label="Converse no WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
+</div>
+
 </body>
 </html>
