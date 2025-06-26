@@ -165,6 +165,13 @@
     <p class="form-privacidade">🔒 Seus dados estão seguros pela LGPD</p>
     <div id="form-message" style="margin-top: 1rem;"></div>
   </form>
+
+  <!-- Google Maps integrado -->
+  <div class="contato-mapa" style="margin-top:2rem;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.991282632456!2d-43.18779768446429!3d-22.96709298498113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997fd1e9e2b1b1%3A0x7e5e8e8e8e8e8e8e!2sAv.%20Nossa%20Sra.%20de%20Copacabana%2C%20978%20-%20Copacabana%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022020-001!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+      width="100%" height="280" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 </div>
 
 
@@ -216,6 +223,9 @@
   <div class="grafico-wrapper">
     <canvas id="grafico"></canvas>
   </div>
+  <div class="btn-gerar-pdf-wrapper" style="text-align: center; margin-top: 2rem;">
+  <button id="btn-gerar-pdf" class="btn-solicitar">Baixar PDF da Simulação</button>
+</div>
 </section>
 
   <footer class="footer">
@@ -265,6 +275,8 @@
 
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 
   <div class="botoes-flutuantes">
   <a href="#" id="btn-topo" class="show" title="Voltar ao topo" aria-label="Voltar ao topo">
