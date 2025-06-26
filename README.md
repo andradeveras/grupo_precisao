@@ -28,6 +28,23 @@ Este projeto é um site moderno e responsivo, desenvolvido para facilitar a simu
 - **Botões Flutuantes:**  
   Acesso rápido ao simulador e ao WhatsApp.
 
+- **Dark Mode:**  
+  Interface elegante com alternância entre modo claro e escuro.
+
+- **Pop-up Timer:**  
+  Pop-up automático após tempo de navegação, para engajamento do usuário.
+
+- **Página de Agradecimento:**  
+  Após o envio do formulário de contato, o usuário é redirecionado para uma página de agradecimento elegante e integrada ao layout.
+
+- **Google Maps Integrado:**  
+  Mapa interativo na seção de contato, facilitando a localização da empresa.
+
+- **Geração de PDF:**  
+  O usuário pode gerar um PDF personalizado com todos os dados da simulação, incluindo a tabela comparativa e o gráfico do simulador.
+
+
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
