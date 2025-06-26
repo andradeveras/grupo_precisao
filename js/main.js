@@ -309,3 +309,17 @@ if (btnPDF) {
     doc.save("simulacao_taxa.pdf");
   });
 }
+
+// =====================
+// POPUP TIMER
+// =====================
+setTimeout(() => {
+  const popup = document.getElementById('popup-timer');
+  if (popup) popup.classList.remove('popup-hidden');
+}, 180000); // 60 segundos para exibir o popup
+
+document.getElementById('popup-close').addEventListener('click', () => {
+  document.getElementById('popup-timer').classList.add('popup-hidden');
+});
+
+

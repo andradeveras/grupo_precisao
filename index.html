@@ -9,6 +9,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
+--
+<div id="popup-timer" class="popup-hidden">
+  <div class="popup-content">
+    <span id="popup-close">&times;</span>
+    <h3>Ei, ainda por aqui?</h3>
+    <p>Simule agora e veja quanto pode economizar com a taxa ideal! 💡</p>
+    <button onclick="document.getElementById('popup-timer').classList.add('popup-hidden'); document.getElementById('simulador').scrollIntoView({ behavior: 'smooth' });">
+      Simular Agora
+    </button>
+  </div>
+</div>
+
 <body>
   <!-- Header -->
   <header>
