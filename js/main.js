@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
         body: formData,
         mode: 'no-cors'
       }).then(() => {
-        alert('Formulário enviado com sucesso!');
+        window.location.href = "obrigado.html"; 
         form.reset();
       }).catch(() => {
         alert('Erro ao enviar formulário. Tente novamente.');

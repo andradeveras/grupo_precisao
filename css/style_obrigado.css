@@ -1,0 +1,89 @@
+/* ==========================
+   OBRIGADO SECTION
+   ========================== */
+.obrigado-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #f7fafc 0%, #e0e7ef 100%);
+  padding: 0 1rem;
+}
+
+.obrigado-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(44,62,80,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  margin: 2rem auto;
+  animation: fadeIn 0.7s;
+}
+
+.obrigado-logo{
+    width: 180px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.obrigado-icone {
+  margin-bottom: 1.2rem;
+  animation: pop 0.7s;
+}
+
+.obrigado-container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+  color: #b425b6;
+  font-weight: 700;
+}
+
+.obrigado-container p {
+  color: #2d3a4b;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.obrigado-container a.btn-voltar {
+  display: inline-block;
+  background: linear-gradient(90deg, #b425b6, #f26522);
+  color: #fff;
+  padding: 0.8em 2em;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s, opacity 0.3s;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.obrigado-container a.btn-voltar:hover {
+  opacity: 0.85;
+  background: linear-gradient(90deg, #f26522, #b425b6);
+}
+
+.obrigado-container a {
+  color: #b425b6;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.obrigado-container a:hover {
+  color: #f26522;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes pop {
+  0% { transform: scale(0.7);}
+  70% { transform: scale(1.1);}
+  100% { transform: scale(1);}
+}
