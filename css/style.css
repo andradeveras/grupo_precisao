@@ -1033,3 +1033,260 @@ canvas {
     grid-template-columns: 1fr;
   }
 }
+
+
+#btn-darkmode {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.12);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+#btn-darkmode:hover {
+  background: #444;
+}
+
+/* ==========================
+   DARK MODE
+   ========================== */
+body.darkmode .footer {
+  background: #232733 !important;
+  color: #b0b3b8 !important;
+  border-top: 1px solid #292d36 !important;
+}
+body.darkmode .footer-logo img {
+  filter: brightness(0) invert(1);
+}
+body.darkmode .footer-col h4 {
+  color: #f26522 !important;
+}
+body.darkmode .footer-col p,
+body.darkmode .footer-telefones,
+body.darkmode .footer-copy {
+  color: #b0b3b8 !important;
+}
+body.darkmode .footer-social i {
+  color: #fff !important;
+}
+body.darkmode .footer-social i:hover {
+  color: #f26522 !important;
+}
+
+/* ==========================
+   DARK MODE - FORMULÁRIO DE CONTATO
+   ========================== */
+body.darkmode .formbold-form-wrapper,
+body.darkmode .contato-wrapper {
+  background: #232733 !important;
+  color: #fff !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18) !important;
+}
+body.darkmode .formbold-form-wrapper h2 {
+  color: #fff !important;
+}
+body.darkmode .form-group label {
+  color: #fff !important;
+}
+body.darkmode .form-group input,
+body.darkmode .form-group select {
+  background: #181c23 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+body.darkmode .form-group input:focus,
+body.darkmode .form-group select:focus {
+  border-color: #b425b6 !important;
+  background: #232733 !important;
+  color: #fff !important;
+}
+body.darkmode .btn-solicitar {
+  background: linear-gradient(to right, #b425b6, #f26522) !important;
+  color: #fff !important;
+}
+body.darkmode .form-privacidade {
+  color: #b0b3b8 !important;
+}
+body.darkmode .error-message {
+  color: #ff6b6b !important;
+}
+
+/* ==========================
+   DARK MODE - BENEFÍCIOS
+   ========================== */
+body.darkmode .beneficios,
+body.darkmode .section-title-beneficios {
+  background: #232733 !important;
+  color: #fff !important;
+}
+body.darkmode .carousel > article {
+  background: #20232a !important;
+  color: #fff !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18) !important;
+}
+body.darkmode .carousel h2 {
+  color: #fff !important;
+}
+body.darkmode .carousel p {
+  color: #b0b3b8 !important;
+}
+
+/* ==========================
+   DARK MODE - AJUSTES GERAIS
+   ========================== */
+body.darkmode {
+  background: #181c23;
+  color: #fff;
+}
+body.darkmode header {
+  background: #232733 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.darkmode nav a {
+  color: #fff !important;
+  background: none !important;
+  transition: color 0.3s, background 0.3s;
+  position: relative;
+  z-index: 1;
+}
+body.darkmode nav a:hover {
+  color: transparent !important;
+  background: none !important;
+  background-image: linear-gradient(90deg, #b425b6, #f26522, #ed1c24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Serviços */
+body.darkmode .servicos {
+  background: #232733 !important;
+}
+body.darkmode .servico-card {
+  background: #20232a !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+}
+body.darkmode .servico-card h3 {
+  color: #fff !important;
+}
+body.darkmode .servico-card p {
+  color: #b0b3b8 !important;
+}
+body.darkmode .servico-icon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 2px #fff);
+}
+
+/* Simulador */
+body.darkmode .simulador {
+  background: #181c23 !important;
+  color: #fff !important;
+}
+body.darkmode .simulador h1,
+body.darkmode .simulador h2,
+body.darkmode .simulador h3,
+body.darkmode .simulador h4,
+body.darkmode .simulador h5,
+body.darkmode .simulador h6,
+body.darkmode .simulador label,
+body.darkmode .simulador p,
+body.darkmode .simulador span {
+  color: #fff !important;
+}
+body.darkmode .simulador input,
+body.darkmode .simulador select {
+  background: #232733 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+body.darkmode .simulador input:focus,
+body.darkmode .simulador select:focus {
+  border-color: #b425b6 !important;
+  background: #232733 !important;
+  color: #fff !important;
+}
+body.darkmode .simulador table,
+body.darkmode .simulador th,
+body.darkmode .simulador td,
+body.darkmode .simulador tr {
+  background: #181c23 !important;
+  color: #fff !important;
+  border-color: #232733 !important;
+}
+body.darkmode .simulador th {
+  background: #232733 !important;
+  color: #f26522 !important;
+}
+body.darkmode .simulador tbody tr:nth-child(even) {
+  background: #20232a !important;
+}
+body.darkmode .simulador tbody tr:hover {
+  background: #2d323c !important;
+}
+body.darkmode .tabela-wrapper {
+  background: transparent !important;
+}
+body.darkmode .tabela-wrapper h3 {
+  color: #fff !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+body.darkmode .simulador .card-result {
+  background: #232733 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border: 1px solid #292d36;
+}
+body.darkmode .simulador .card-result h4,
+body.darkmode .simulador .card-result p {
+  color: #fff !important;
+}
+
+/* Botões flutuantes e darkmode */
+body.darkmode #btn-topo,
+body.darkmode #btn-darkmode {
+  background: #2d323c !important;
+  color: #fff !important;
+}
+body.darkmode #btn-topo:hover,
+body.darkmode #btn-darkmode:hover {
+  background: #b425b6 !important;
+}
+
+/* Links do header no dark mode: hover com cor de destaque */
+body.darkmode nav a:hover {
+  color: #f26522 !important;
+  background: none !important;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  text-fill-color: initial;
+  font-weight: bold;
+}
+
+/* Botão CTA do header no dark mode: hover com gradiente invertido */
+body.darkmode nav .cta {
+  background: linear-gradient(90deg, #f26522, #b425b6) !important;
+  color: #fff !important;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+body.darkmode nav .cta:hover {
+  background: linear-gradient(90deg, #b425b6, #f26522) !important;
+  color: #fff !important;
+  opacity: 0.95;
+}
