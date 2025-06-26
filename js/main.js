@@ -230,3 +230,82 @@ if (btnTopo) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+// =====================
+// GERAR PDF DO SIMULADOR
+// =====================
+
+const btnPDF = document.getElementById('btn-gerar-pdf');
+if (btnPDF) {
+  btnPDF.addEventListener('click', function () {
+    const valor = document.getElementById("valor").value;
+    const percentual = document.getElementById("percentual").value;
+    const meses = document.getElementById("meses").value;
+    const valorMensal = document.getElementById("valorMensal").textContent;
+    const valorTotal = document.getElementById("valorTotal").textContent;
+
+    // Pega a tabela comparativa
+    const tabela = document.getElementById("tabelaComparativa");
+    let comparativo = [];
+    if (tabela) {
+      for (let row of tabela.querySelectorAll('tr')) {
+        const cols = row.querySelectorAll('td');
+        if (cols.length === 3) {
+          comparativo.push([
+            cols[0].textContent.trim(),
+            cols[1].textContent.trim(),
+            cols[2].textContent.trim()
+          ]);
+        }
+      }
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text("Simulação de Taxa de Administração", 20, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Valor mensal do condomínio: R$ ${valor}`, 20, 35);
+    doc.text(`Percentual da taxa: ${percentual}%`, 20, 43);
+    doc.text(`Número de meses: ${meses}`, 20, 51);
+
+    doc.setFontSize(14);
+    doc.text("Resultado:", 20, 65);
+    doc.setFontSize(12);
+    doc.text(`Valor mensal da taxa: ${valorMensal}`, 20, 73);
+    doc.text(`Total no período: ${valorTotal}`, 20, 81);
+
+    // Tabela comparativa
+    if (comparativo.length > 0) {
+      doc.setFontSize(13);
+      doc.text("Comparativo de Taxas:", 20, 95);
+      doc.setFontSize(11);
+      let y = 103;
+      doc.text("Percentual", 20, y);
+      doc.text("Mensal", 60, y);
+      doc.text("Total", 110, y);
+      y += 7;
+      comparativo.forEach(linha => {
+        doc.text(linha[0], 20, y);
+        doc.text(linha[1], 60, y);
+        doc.text(linha[2], 110, y);
+        y += 7;
+      });
+      // Adiciona o gráfico logo após a tabela
+      const graficoCanvas = document.getElementById('grafico');
+      if (graficoCanvas) {
+        const imgData = graficoCanvas.toDataURL('image/png', 1.0);
+        // Ajuste a posição Y conforme necessário para não sobrepor a tabela
+        doc.addImage(imgData, 'PNG', 20, y + 10, 170, 60);
+      }
+    }
+
+    doc.setFontSize(10);
+    doc.setTextColor(120);
+    doc.text("Gerado por Grupo Precisão", 20, 280);
+
+    doc.save("simulacao_taxa.pdf");
+  });
+}

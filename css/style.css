@@ -822,6 +822,15 @@ input[type="number"] {
   cursor: default;
 }
 
+/* Botão de gerar PDF */
+#btn-gerar-pdf {
+  width: 50%;
+}
+#btn-gerar-pdf:hover {
+  opacity: 0.85;
+  background: linear-gradient(90deg, #f26522, #b425b6);
+}
+
 
 /* ==== Wrapper do gráfico ==== */
 .grafico-wrapper {
