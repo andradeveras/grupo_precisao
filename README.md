@@ -87,9 +87,13 @@ Este projeto é um site moderno e responsivo, desenvolvido para facilitar a simu
 ![alt text](./assets/img/README/servicos.png)
 ![alt text](./assets/img/README/beneficios.png)
 ![alt text](./assets/img/README/contato.png)
+![alt text](./assets/img/README/agradecimento.png)
 ![alt text](./assets/img/README/simulador.png)
 ![alt text](./assets/img/README/grafico.png)
 ![alt text](./assets/img/README/footer.png)
+![alt text](./assets/img/README/darkmode.png)
+![alt text](./assets/img/README/googlemaps.png)
+![alt text](./assets/img/README/pdfrelatorio.png)
 
 
 ## 👤 Autor
